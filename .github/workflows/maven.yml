@@ -1,15 +1,14 @@
 
-name: build with Maven self hosted
+name: build maven self hosted
 
 on:
   push:
     branches: [ "dev" ]
-  
 
 jobs:
   build:
 
-    runs-on:self-hosted
+    runs-on: self hosted
 
     steps:
     - uses: actions/checkout@v3
@@ -19,7 +18,7 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-     - name: compile with Maven
+    - name: compile with Maven
       run: mvn compile
     - name: test with Maven
       run: mvn test
